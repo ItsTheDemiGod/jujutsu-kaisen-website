@@ -1,0 +1,768 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jujutsu Kaisen — Enter the World of Cursed Energy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">呪術廻戦</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#lore">Lore</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#techniques">Techniques</a></li>
+      <li><a href="#curses">Curses</a></li>
+      <li><a href="#moments">Moments</a></li>
+    </ul>
+    <div class="nav-energy"></div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 1 — HERO                            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="hero-bg-layers">
+      <div class="hero-layer hero-layer-1"></div>
+      <div class="hero-layer hero-layer-2"></div>
+      <div class="hero-layer hero-layer-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">呪術廻戦</div>
+      <h1 class="hero-title">
+        <span class="title-line" data-text="JUJUTSU">JUJUTSU</span>
+        <span class="title-line title-line-2" data-text="KAISEN">KAISEN</span>
+      </h1>
+      <p class="hero-subtitle">Enter the World of Cursed Energy</p>
+      <div class="hero-tagline">Where sorcerers walk the line between life and death</div>
+
+      <div class="hero-cta">
+        <button class="btn-primary" id="enterBtn">
+          <span class="btn-text">Begin Your Journey</span>
+          <div class="btn-energy"></div>
+        </button>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+
+    <!-- Floating runes -->
+    <div class="rune rune-1">呪</div>
+    <div class="rune rune-2">術</div>
+    <div class="rune rune-3">廻</div>
+    <div class="rune rune-4">戦</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 2 — LORE / WHAT IS JJK             -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="lore" id="lore">
+    <div class="lore-bg">
+      <canvas id="loreCanvas"></canvas>
+    </div>
+
+    <div class="lore-content">
+      <div class="section-label">ORIGIN STORY</div>
+      <h2 class="section-title lore-title">The Hidden World<br/><em>of Curses</em></h2>
+
+      <div class="lore-grid">
+        <!-- Card 1 -->
+        <div class="lore-card" data-index="0">
+          <div class="lore-card-icon">
+            <svg viewBox="0 0 100 100" class="energy-icon">
+              <circle cx="50" cy="50" r="30" fill="none" stroke="url(#grad1)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="15" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.6"/>
+              <path d="M50 20 L60 45 L85 50 L60 55 L50 80 L40 55 L15 50 L40 45 Z" fill="url(#grad1)" opacity="0.8"/>
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#7B2FBE"/>
+                  <stop offset="100%" style="stop-color:#00D4FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3>Cursed Energy</h3>
+          <p>Negative emotions emitted by humans manifest as cursed energy — an invisible force that births supernatural beings known as curses. Only those with special sensitivity can perceive and wield it.</p>
+          <div class="lore-card-glow"></div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="lore-card" data-index="1">
+          <div class="lore-card-icon">
+            <svg viewBox="0 0 100 100" class="energy-icon">
+              <ellipse cx="50" cy="60" rx="30" ry="25" fill="none" stroke="url(#grad2)" stroke-width="2"/>
+              <path d="M35 40 Q50 10 65 40" fill="none" stroke="url(#grad2)" stroke-width="2"/>
+              <circle cx="50" cy="35" r="8" fill="url(#grad2)" opacity="0.7"/>
+              <line x1="30" y1="65" x2="70" y2="65" stroke="url(#grad2)" stroke-width="1" opacity="0.5"/>
+              <defs>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#FF2D55"/>
+                  <stop offset="100%" style="stop-color:#FF9F0A"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3>Cursed Spirits</h3>
+          <p>Born from humanity's collective fear and hatred, cursed spirits haunt the living world. They range from minor nuisances to catastrophic Special Grade entities capable of destroying cities.</p>
+          <div class="lore-card-glow"></div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="lore-card" data-index="2">
+          <div class="lore-card-icon">
+            <svg viewBox="0 0 100 100" class="energy-icon">
+              <polygon points="50,10 80,70 20,70" fill="none" stroke="url(#grad3)" stroke-width="2"/>
+              <polygon points="50,25 70,65 30,65" fill="none" stroke="url(#grad3)" stroke-width="1" opacity="0.5"/>
+              <circle cx="50" cy="52" r="8" fill="url(#grad3)" opacity="0.9"/>
+              <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#00D4FF"/>
+                  <stop offset="100%" style="stop-color:#7B2FBE"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3>Jujutsu Sorcerers</h3>
+          <p>Elite warriors trained by Tokyo and Kyoto Jujutsu High Schools, these sorcerers channel cursed energy into devastating techniques to exorcise curses — at great personal cost.</p>
+          <div class="lore-card-glow"></div>
+        </div>
+      </div>
+
+      <!-- Animated diagram -->
+      <div class="lore-diagram">
+        <div class="diagram-center">
+          <div class="diagram-orb">呪</div>
+          <div class="diagram-ring diagram-ring-1"></div>
+          <div class="diagram-ring diagram-ring-2"></div>
+          <div class="diagram-ring diagram-ring-3"></div>
+        </div>
+        <div class="diagram-nodes">
+          <div class="diagram-node" style="--angle: 0deg">Fear</div>
+          <div class="diagram-node" style="--angle: 60deg">Hatred</div>
+          <div class="diagram-node" style="--angle: 120deg">Grief</div>
+          <div class="diagram-node" style="--angle: 180deg">Rage</div>
+          <div class="diagram-node" style="--angle: 240deg">Malice</div>
+          <div class="diagram-node" style="--angle: 300deg">Despair</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 3 — CHARACTERS                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="characters" id="characters">
+    <div class="section-header">
+      <div class="section-label">THE SORCERERS</div>
+      <h2 class="section-title">Choose Your <em>Path</em></h2>
+    </div>
+
+    <!-- Character: Yuji Itadori -->
+    <div class="character-block" data-char="yuji">
+      <div class="char-bg-energy yuji-energy"></div>
+      <div class="char-layout">
+        <div class="char-portrait-wrap">
+          <div class="char-portrait yuji-portrait">
+            <div class="char-silhouette">
+              <!-- Yuji Itadori — official anime artwork -->
+              <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/6/6f/Yuji_Itadori_(Anime_2).png/revision/latest?cb=20240621133654" alt="Yuji Itadori" class="char-img" />
+            </div>
+            <div class="char-aura yuji-aura"></div>
+            <div class="char-name-jp">虎杖悠仁</div>
+          </div>
+        </div>
+        <div class="char-info">
+          <div class="char-rank">Grade 1 Sorcerer</div>
+          <h3 class="char-name">Yuji Itadori</h3>
+          <p class="char-desc">The vessel of Ryomen Sukuna, the King of Curses. Despite harboring the most dangerous cursed spirit in history, Yuji fights with unwavering resolve — determined that everyone deserves a proper death.</p>
+          <div class="char-stats">
+            <div class="stat-bar" data-label="Strength" data-value="98">
+              <div class="stat-label">Strength</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">98</div>
+            </div>
+            <div class="stat-bar" data-label="Speed" data-value="90">
+              <div class="stat-label">Speed</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">90</div>
+            </div>
+            <div class="stat-bar" data-label="Cursed Energy" data-value="95">
+              <div class="stat-label">Cursed Energy</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">95</div>
+            </div>
+            <div class="stat-bar" data-label="Technique" data-value="85">
+              <div class="stat-label">Technique</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">85</div>
+            </div>
+          </div>
+          <div class="char-techniques">
+            <div class="technique-tag">Divergent Fist</div>
+            <div class="technique-tag">Black Flash</div>
+            <div class="technique-tag">Shrine (Sukuna)</div>
+            <div class="technique-tag">Slaughter Demon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Character: Gojo -->
+    <div class="character-block reverse" data-char="gojo">
+      <div class="char-bg-energy gojo-energy"></div>
+      <div class="char-layout">
+        <div class="char-portrait-wrap">
+          <div class="char-portrait gojo-portrait">
+            <div class="char-silhouette">
+              <!-- Satoru Gojo — official anime artwork -->
+              <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/e/ef/Satoru_Gojo_(Anime_2).png/revision/latest?cb=20240622022211" alt="Satoru Gojo" class="char-img" />
+            </div>
+            <div class="char-aura gojo-aura"></div>
+            <div class="char-name-jp">五条悟</div>
+          </div>
+        </div>
+        <div class="char-info">
+          <div class="char-rank">Special Grade Sorcerer</div>
+          <h3 class="char-name">Satoru Gojo</h3>
+          <p class="char-desc">The strongest sorcerer in the world. Blessed with the Six Eyes and the Limitless technique, Gojo manipulates space at the atomic level. His very existence rewrites the balance of power between sorcerers and curses.</p>
+          <div class="char-stats">
+            <div class="stat-bar" data-label="Strength" data-value="100">
+              <div class="stat-label">Strength</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">100</div>
+            </div>
+            <div class="stat-bar" data-label="Speed" data-value="100">
+              <div class="stat-label">Speed</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">100</div>
+            </div>
+            <div class="stat-bar" data-label="Cursed Energy" data-value="100">
+              <div class="stat-label">Cursed Energy</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">100</div>
+            </div>
+            <div class="stat-bar" data-label="Technique" data-value="100">
+              <div class="stat-label">Technique</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">100</div>
+            </div>
+          </div>
+          <div class="char-techniques">
+            <div class="technique-tag gojo-tag">Infinity</div>
+            <div class="technique-tag gojo-tag">Blue / Red</div>
+            <div class="technique-tag gojo-tag">Hollow Purple</div>
+            <div class="technique-tag gojo-tag">Unlimited Void</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Character: Megumi -->
+    <div class="character-block" data-char="megumi">
+      <div class="char-bg-energy megumi-energy"></div>
+      <div class="char-layout">
+        <div class="char-portrait-wrap">
+          <div class="char-portrait megumi-portrait">
+            <div class="char-silhouette">
+              <!-- Megumi Fushiguro — official anime artwork -->
+              <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/08/Megumi_Fushiguro.png/revision/latest?cb=20200530162546" alt="Megumi Fushiguro" class="char-img" />
+            </div>
+            <div class="char-aura megumi-aura"></div>
+            <div class="char-name-jp">伏黒恵</div>
+          </div>
+        </div>
+        <div class="char-info">
+          <div class="char-rank">Grade 2 Sorcerer</div>
+          <h3 class="char-name">Megumi Fushiguro</h3>
+          <p class="char-desc">Heir to the Ten Shadows Technique of the Zenin clan. Megumi summons divine shikigami from the shadows, tactically overwhelming opponents. He fights with cold logic, hiding a fierce loyalty beneath his stoic exterior.</p>
+          <div class="char-stats">
+            <div class="stat-bar" data-label="Strength" data-value="82">
+              <div class="stat-label">Strength</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">82</div>
+            </div>
+            <div class="stat-bar" data-label="Speed" data-value="85">
+              <div class="stat-label">Speed</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">85</div>
+            </div>
+            <div class="stat-bar" data-label="Cursed Energy" data-value="88">
+              <div class="stat-label">Cursed Energy</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">88</div>
+            </div>
+            <div class="stat-bar" data-label="Technique" data-value="95">
+              <div class="stat-label">Technique</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">95</div>
+            </div>
+          </div>
+          <div class="char-techniques">
+            <div class="technique-tag megumi-tag">Ten Shadows</div>
+            <div class="technique-tag megumi-tag">Divine Dogs</div>
+            <div class="technique-tag megumi-tag">Nue</div>
+            <div class="technique-tag megumi-tag">Chimera Shadow Garden</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Character: Nobara -->
+    <div class="character-block reverse" data-char="nobara">
+      <div class="char-bg-energy nobara-energy"></div>
+      <div class="char-layout">
+        <div class="char-portrait-wrap">
+          <div class="char-portrait nobara-portrait">
+            <div class="char-silhouette">
+              <!-- Nobara Kugisaki — official anime artwork -->
+              <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/d/dd/Nobara_Kugisaki_(Anime_2).png/revision/latest?cb=20201219222346" alt="Nobara Kugisaki" class="char-img" />
+            </div>
+            <div class="char-aura nobara-aura"></div>
+            <div class="char-name-jp">釘崎野薔薇</div>
+          </div>
+        </div>
+        <div class="char-info">
+          <div class="char-rank">Grade 3 Sorcerer</div>
+          <h3 class="char-name">Nobara Kugisaki</h3>
+          <p class="char-desc">Wielder of the Straw Doll Technique, Nobara channels cursed energy through nails and a hammer to devastating effect. Fiercely independent and unapologetically herself, she refuses to compromise for anyone.</p>
+          <div class="char-stats">
+            <div class="stat-bar" data-label="Strength" data-value="78">
+              <div class="stat-label">Strength</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">78</div>
+            </div>
+            <div class="stat-bar" data-label="Speed" data-value="80">
+              <div class="stat-label">Speed</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">80</div>
+            </div>
+            <div class="stat-bar" data-label="Cursed Energy" data-value="85">
+              <div class="stat-label">Cursed Energy</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">85</div>
+            </div>
+            <div class="stat-bar" data-label="Technique" data-value="92">
+              <div class="stat-label">Technique</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">92</div>
+            </div>
+          </div>
+          <div class="char-techniques">
+            <div class="technique-tag nobara-tag">Straw Doll</div>
+            <div class="technique-tag nobara-tag">Hairpin</div>
+            <div class="technique-tag nobara-tag">Resonance</div>
+            <div class="technique-tag nobara-tag">Wooden Mallet</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Character: Sukuna -->
+    <div class="character-block sukuna-block" data-char="sukuna">
+      <div class="char-bg-energy sukuna-energy"></div>
+      <div class="sukuna-warning">
+        <div class="warning-pulse"></div>
+        <span>KING OF CURSES</span>
+      </div>
+      <div class="char-layout">
+        <div class="char-portrait-wrap">
+          <div class="char-portrait sukuna-portrait">
+            <div class="char-silhouette">
+              <!-- Ryomen Sukuna — official anime artwork -->
+              <img src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/0e/Original_Ryomen_Sukuna_(Anime).png/revision/latest?cb=20201010033624" alt="Ryomen Sukuna" class="char-img" />
+            </div>
+            <div class="char-aura sukuna-aura"></div>
+            <div class="char-name-jp">両面宿儺</div>
+          </div>
+        </div>
+        <div class="char-info">
+          <div class="char-rank sukuna-rank">Special Grade — King of Curses</div>
+          <h3 class="char-name sukuna-name">Ryomen Sukuna</h3>
+          <p class="char-desc">The undisputed King of Curses, a demon of immeasurable power who existed over 1000 years ago. Even as mere fingers split among vessels, his power dwarfs that of any living sorcerer. To contain him is impossible. To face him is death.</p>
+          <div class="char-stats">
+            <div class="stat-bar sukuna-stat" data-label="Strength" data-value="100">
+              <div class="stat-label">Strength</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">∞</div>
+            </div>
+            <div class="stat-bar sukuna-stat" data-label="Speed" data-value="100">
+              <div class="stat-label">Speed</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">∞</div>
+            </div>
+            <div class="stat-bar sukuna-stat" data-label="Cursed Energy" data-value="100">
+              <div class="stat-label">Cursed Energy</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">∞</div>
+            </div>
+            <div class="stat-bar sukuna-stat" data-label="Technique" data-value="100">
+              <div class="stat-label">Technique</div>
+              <div class="stat-track"><div class="stat-fill"></div></div>
+              <div class="stat-num">∞</div>
+            </div>
+          </div>
+          <div class="char-techniques">
+            <div class="technique-tag sukuna-tag">Malevolent Shrine</div>
+            <div class="technique-tag sukuna-tag">Cleave / Dismantle</div>
+            <div class="technique-tag sukuna-tag">Shrine (CT)</div>
+            <div class="technique-tag sukuna-tag">World Cutting Slash</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 4 — TECHNIQUES                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="techniques" id="techniques">
+    <div class="techniques-bg">
+      <canvas id="techCanvas"></canvas>
+    </div>
+    <div class="section-header">
+      <div class="section-label">CURSED ARTS</div>
+      <h2 class="section-title">Techniques &amp; <em>Domain Expansions</em></h2>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-card" data-tech="domain">
+        <div class="tech-card-inner">
+          <div class="tech-front">
+            <div class="tech-icon domain-icon">
+              <div class="domain-rings">
+                <div class="d-ring"></div>
+                <div class="d-ring"></div>
+                <div class="d-ring"></div>
+              </div>
+            </div>
+            <h4>Domain Expansion</h4>
+            <div class="tech-rarity">Innate Technique</div>
+          </div>
+          <div class="tech-back">
+            <h4>Domain Expansion</h4>
+            <p>The pinnacle of jujutsu. Sorcerers materialize their innate domain — a pocket reality where their technique lands with guaranteed accuracy. Hit rate becomes absolute.</p>
+            <div class="tech-users">Used by: Gojo, Sukuna, Megumi, Mahito</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card" data-tech="blackflash">
+        <div class="tech-card-inner">
+          <div class="tech-front">
+            <div class="tech-icon blackflash-icon">
+              <div class="flash-bolt"></div>
+            </div>
+            <h4>Black Flash</h4>
+            <div class="tech-rarity">Advanced Strike</div>
+          </div>
+          <div class="tech-back">
+            <h4>Black Flash</h4>
+            <p>A spatial distortion created when cursed energy is applied within 0.000001 seconds of impact. Amplifies damage by 2.5× the base power. Only the best can achieve it.</p>
+            <div class="tech-users">Used by: Yuji, Nanami, Todo, Nobara</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card" data-tech="limitless">
+        <div class="tech-card-inner">
+          <div class="tech-front">
+            <div class="tech-icon limitless-icon">
+              <div class="infinity-symbol">∞</div>
+            </div>
+            <h4>Limitless</h4>
+            <div class="tech-rarity">Six Eyes Required</div>
+          </div>
+          <div class="tech-back">
+            <h4>Limitless (無下限)</h4>
+            <p>Manipulates space itself at the atomic level. Blue creates attraction, Red creates repulsion. Combined as Hollow Purple — an erasure of everything between two points.</p>
+            <div class="tech-users">Used by: Satoru Gojo exclusively</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card" data-tech="tenshadows">
+        <div class="tech-card-inner">
+          <div class="tech-front">
+            <div class="tech-icon tenshadows-icon">
+              <div class="shadow-hand"></div>
+            </div>
+            <h4>Ten Shadows</h4>
+            <div class="tech-rarity">Shikigami Technique</div>
+          </div>
+          <div class="tech-back">
+            <h4>Ten Shadows Technique</h4>
+            <p>Summons divine shikigami manifested through shadows using two hands. Each shikigami must be tamed in combat. The technique's pinnacle: the Eight-Handled Sword Divergent Sila Divine General Mahoraga.</p>
+            <div class="tech-users">Used by: Megumi Fushiguro</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card" data-tech="cursedtools">
+        <div class="tech-card-inner">
+          <div class="tech-front">
+            <div class="tech-icon cursedtools-icon">
+              <div class="tool-blade"></div>
+            </div>
+            <h4>Cursed Tools</h4>
+            <div class="tech-rarity">Special Grade Weapons</div>
+          </div>
+          <div class="tech-back">
+            <h4>Cursed Tools</h4>
+            <p>Weapons imbued with cursed energy. Special Grade tools can harm even the most powerful curses. From Playful Cloud to the Inverted Spear of Heaven, each carries a unique ability.</p>
+            <div class="tech-users">Various sorcerers &amp; curse users</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-card" data-tech="shrine">
+        <div class="tech-card-inner">
+          <div class="tech-front">
+            <div class="tech-icon shrine-icon">
+              <div class="shrine-pulse"></div>
+            </div>
+            <h4>Malevolent Shrine</h4>
+            <div class="tech-rarity">King's Domain</div>
+          </div>
+          <div class="tech-back">
+            <h4>Malevolent Shrine</h4>
+            <p>Sukuna's domain expansion. Unlike conventional domains, it manifests in reality rather than a separate dimension. Everything within range is subject to Cleave or Dismantle. Escape is impossible.</p>
+            <div class="tech-users">Ryomen Sukuna — King of Curses</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 5 — WORLD OF CURSES                 -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="curses" id="curses">
+    <div class="curses-bg"></div>
+    <div class="section-header">
+      <div class="section-label">CURSE HIERARCHY</div>
+      <h2 class="section-title">The World<br/><em>of Darkness</em></h2>
+    </div>
+
+    <div class="curse-hierarchy">
+      <div class="hierarchy-line"></div>
+
+      <div class="curse-grade" data-grade="special">
+        <div class="grade-badge special-badge">Special Grade</div>
+        <div class="grade-content">
+          <div class="curse-silhouette special-curse">
+            <div class="curse-aura"></div>
+            <div class="curse-form"></div>
+          </div>
+          <div class="grade-info">
+            <h4>Special Grade Curses</h4>
+            <p>The most catastrophic cursed spirits. Mahito, Jogo, Dagon, and Hanami — special grade curses with personalities and goals. A single special grade can devastate entire regions.</p>
+            <div class="grade-examples">Jogo · Mahito · Dagon · Hanami · Sukuna</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="curse-grade" data-grade="one">
+        <div class="grade-badge grade1-badge">Grade 1</div>
+        <div class="grade-content">
+          <div class="curse-silhouette grade1-curse">
+            <div class="curse-aura"></div>
+            <div class="curse-form"></div>
+          </div>
+          <div class="grade-info">
+            <h4>Grade 1 Curses</h4>
+            <p>Powerful enough to require multiple sorcerers. They exhibit intelligence and strategy. Capable of seriously injuring or killing Grade 2 sorcerers with ease.</p>
+            <div class="grade-examples">Various high-grade regional curses</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="curse-grade" data-grade="two">
+        <div class="grade-badge grade2-badge">Grade 2</div>
+        <div class="grade-content">
+          <div class="curse-silhouette grade2-curse">
+            <div class="curse-aura"></div>
+            <div class="curse-form"></div>
+          </div>
+          <div class="grade-info">
+            <h4>Grade 2 &amp; Below</h4>
+            <p>Semi-grade 1 through Grade 4 curses make up the vast majority of the cursed spirit population. They prey on ordinary humans and are routinely exorcised by licensed sorcerers.</p>
+            <div class="grade-examples">Neighborhood curses · Urban spirits · Fear manifestations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ambient curse silhouettes -->
+    <div class="ambient-curses">
+      <div class="ambient-curse ac-1"></div>
+      <div class="ambient-curse ac-2"></div>
+      <div class="ambient-curse ac-3"></div>
+      <div class="ambient-curse ac-4"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 6 — EPIC MOMENTS                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="moments" id="moments">
+    <div class="section-header">
+      <div class="section-label">DEFINING BATTLES</div>
+      <h2 class="section-title">Epic <em>Moments</em></h2>
+    </div>
+
+    <div class="moments-panels">
+      <!-- ── Gojo vs. Jogo ── -->
+      <div class="moment-panel" data-moment="gojo-jogo">
+        <!-- Scene artwork as full background -->
+        <div class="panel-bg gojo-jogo-bg">
+          <img
+            src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/6/6a/Satoru_Gojo_vs._Jogo.png/revision/latest?cb=20200202180706"
+            alt="Gojo vs Jogo scene"
+            class="panel-scene-img"
+          />
+        </div>
+        <!-- Character portrait floating in panel -->
+        <div class="panel-portrait gojo-panel-portrait">
+          <img
+            src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/e/ef/Satoru_Gojo_(Anime_2).png/revision/latest?cb=20240622022211"
+            alt="Satoru Gojo"
+            class="panel-char-img gojo-char-img"
+          />
+          <div class="panel-portrait-glow gojo-pglow"></div>
+        </div>
+        <div class="panel-overlay"></div>
+        <div class="panel-content">
+          <div class="panel-ep">Episode 19</div>
+          <h3 class="panel-title">Gojo vs. Jogo</h3>
+          <p class="panel-desc">In a display of absolute power, Gojo dismantles Jogo's volcanic Domain with ease. The gap between the strongest and the rest becomes a chasm. Infinity reigns supreme.</p>
+          <div class="panel-quote">"Throughout Heaven and Earth, I alone am the honored one."</div>
+          <div class="panel-energy-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Yuji vs. Mahito ── -->
+      <div class="moment-panel" data-moment="yuji-mahito">
+        <!-- Scene artwork as full background -->
+        <div class="panel-bg yuji-mahito-bg">
+          <img
+            src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/a/ac/Yuji_and_Aoi_Todo_ready_to_fight_Mahito_(Anime).png/revision/latest?cb=20231209085004"
+            alt="Yuji vs Mahito scene"
+            class="panel-scene-img"
+          />
+        </div>
+        <!-- Character portrait floating in panel -->
+        <div class="panel-portrait yuji-panel-portrait">
+          <img
+            src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/6/6f/Yuji_Itadori_(Anime_2).png/revision/latest?cb=20240621133654"
+            alt="Yuji Itadori"
+            class="panel-char-img yuji-char-img"
+          />
+          <div class="panel-portrait-glow yuji-pglow"></div>
+        </div>
+        <div class="panel-overlay"></div>
+        <div class="panel-content">
+          <div class="panel-ep">Episode 22</div>
+          <h3 class="panel-title">Yuji vs. Mahito</h3>
+          <p class="panel-desc">A clash of ideologies. Mahito's Idle Transfiguration meets Yuji's soul-hardened body. Grief and rage forge a sorcerer in real time. Black Flash — four consecutive times.</p>
+          <div class="panel-quote">"I don't care about good or evil. I just don't want to lose to you."</div>
+          <div class="panel-energy-bar"></div>
+        </div>
+      </div>
+
+      <!-- ── Sukuna Awakens ── -->
+      <div class="moment-panel sukuna-awaken" data-moment="sukuna-awaken">
+        <!-- Scene artwork as full background -->
+        <div class="panel-bg sukuna-bg">
+          <img
+            src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/0/07/Shibuya_after_Sukuna%27s_rampage_(Anime).png/revision/latest?cb=20231117012127"
+            alt="Sukuna Shibuya rampage scene"
+            class="panel-scene-img"
+          />
+        </div>
+        <!-- Character portrait floating in panel -->
+        <div class="panel-portrait sukuna-panel-portrait">
+          <img
+            src="https://static.wikia.nocookie.net/jujutsu-kaisen/images/3/3c/Sukuna_(Anime_2).png/revision/latest?cb=20201025014026"
+            alt="Ryomen Sukuna"
+            class="panel-char-img sukuna-char-img"
+          />
+          <div class="panel-portrait-glow sukuna-pglow"></div>
+        </div>
+        <div class="panel-overlay sukuna-overlay"></div>
+        <div class="panel-content">
+          <div class="panel-ep">Chapter 117</div>
+          <h3 class="panel-title">Sukuna Awakens</h3>
+          <p class="panel-desc">Given twenty fingers and full power, Sukuna descends upon Shibuya. In moments, district after district is laid to waste. Malevolent Shrine expands to an unthinkable scale. This is what a god of destruction looks like.</p>
+          <div class="panel-quote">"I am Ryomen Sukuna. There is no equal."</div>
+          <div class="panel-energy-bar sukuna-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!-- SECTION 7 — ENDING                          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <section class="ending" id="ending">
+    <canvas id="endingCanvas"></canvas>
+
+    <div class="ending-content">
+      <div class="ending-eyebrow">呪術廻戦</div>
+      <blockquote class="ending-quote">
+        <span class="quote-mark">"</span>
+        Throughout Heaven and Earth,<br/>
+        <em>I alone am the honored one.</em>
+        <span class="quote-mark">"</span>
+      </blockquote>
+      <div class="quote-attr">— Satoru Gojo</div>
+
+      <div class="ending-divider">
+        <div class="divider-line"></div>
+        <div class="divider-orb">六</div>
+        <div class="divider-line"></div>
+      </div>
+
+      <p class="ending-text">The battle between sorcerers and curses rages on. Every exorcism, every sacrifice, every Black Flash brings humanity one step closer to safety — or oblivion.</p>
+
+      <button class="btn-restart" id="restartBtn">
+        <div class="restart-energy"></div>
+        <span>Enter the Jujutsu World Again</span>
+      </button>
+    </div>
+
+    <!-- Floating particles handled by canvas -->
+    <div class="ending-runes">
+      <div class="e-rune">呪</div>
+      <div class="e-rune">術</div>
+      <div class="e-rune">廻</div>
+      <div class="e-rune">戦</div>
+      <div class="e-rune">無</div>
+      <div class="e-rune">限</div>
+    </div>
+  </section>
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
